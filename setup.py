@@ -62,7 +62,7 @@ setup(
     license='MIT License',
     keywords=['python3', 'api-blueprint', ],
     classifiers=[
-        'Development Status :: Alpha',
+        'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: Unix',

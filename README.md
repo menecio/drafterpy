@@ -9,22 +9,21 @@ API Blueprint is Web API documentation language. You can find API Blueprint docu
 Simple api-blueprint to json parsing:
 
 ```python
+from drafterpy.blueprint import Blueprint
 
-        from drafterpy.blueprint import Blueprint
+content = "# My API\n" \
+          "## GET /message\n" \
+          "+ Response 200 (text/plain)\n" \
+          "\n" \
+          "        Hello World!\n"
 
-        content = "# My API\n" \
-                  "## GET /message\n" \
-                  "+ Response 200 (text/plain)\n" \
-                  "\n" \
-                  "        Hello World!\n"
-
-        bp = Blueprint(content)
-        bp.parse()
+bp = Blueprint(content)
+bp.parse()
 ```
 
 ###Contribution
 Any contributions and advices are welcome. Please report any issues at
 the [Github Page](https://github.com/menecio/drafterpy)
 
-## License
+### License
 MIT License. See the [LICENSE](https://github.com/menecio/drafterpy/blob/master/LICENSE) file.

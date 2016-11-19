@@ -1,5 +1,8 @@
 DrafterPy
-=========
+========
+.. image:: https://img.shields.io/pypi/v/drafterpy.svg?style=flat-square
+    :target: https://pypi.python.org/pypi/drafterpy/
+    :alt: PyPI Version
 
 API Blueprint Parser for Python
 -------------------------------

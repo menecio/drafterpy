@@ -4,12 +4,11 @@ Python bindings for the [Drafter](https://github.com/apiaryio/drafter) library. 
 
 API Blueprint is Web API documentation language. You can find API Blueprint documentation on the [API Blueprint site](http://apiblueprint.org).
 
-Example
--------
+### Example
 
 Simple api-blueprint to json parsing:
 
-.. code:: python
+```python
 
         from drafterpy.blueprint import Blueprint
 
@@ -21,13 +20,11 @@ Simple api-blueprint to json parsing:
 
         bp = Blueprint(content)
         bp.parse()
+```
 
-
-Contribution
-------------
-
+###Contribution
 Any contributions and advices are welcome. Please report any issues at
-the `GitHub page`_.
+the [Github Page](https://github.com/menecio/drafterpy)
 
 ## License
 MIT License. See the [LICENSE](https://github.com/menecio/drafterpy/blob/master/LICENSE) file.

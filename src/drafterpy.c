@@ -16,10 +16,6 @@ static PyObject *drafterpy_parse_blueprint_to(PyObject *self, PyObject *args){
         options.format = DRAFTER_SERIALIZE_JSON;
     else if (strcmp("yaml", format) == 0)
         options.format = DRAFTER_SERIALIZE_YAML;
-    else {
-        fprintf(stderr, "Fatal error: Invalid output format\n");
-        return NULL;
-    }
     drafter_parse_blueprint_to(blueprint, &result, options);
 
     return Py_BuildValue("s", result);
@@ -28,7 +24,6 @@ static PyObject *drafterpy_parse_blueprint_to(PyObject *self, PyObject *args){
 
 static PyObject *drafterpy_check_blueprint(PyObject *self, PyObject *args){
     char *blueprint;
-    char *format;
     
     if(!PyArg_ParseTuple(args, "s", &blueprint))
         return NULL;
@@ -56,33 +51,12 @@ static char drafterpy_docstring[] =
     
 static struct PyModuleDef drafterpymodule = {
     PyModuleDef_HEAD_INIT,
-    "drafterpy",
+    "_drafter",
     drafterpy_docstring,
     -1,
     drafterpy_methods
 };
 
-PyMODINIT_FUNC PyInit_drafterpy(void){
+PyMODINIT_FUNC PyInit__drafter(void){
     return PyModule_Create(&drafterpymodule);
-}
-
-int main(int argc, char *argv[]){
-    wchar_t *program = Py_DecodeLocale(argv[0], NULL);
-    if (program == NULL) {
-        fprintf(stderr, "Fatal error: cannot decode argv[0]\n");
-    }
-
-    /* Add a built-in module, before Py_Initialize */
-    PyImport_AppendInittab("drafterpy", PyInit_drafterpy);
-
-    /* Pass argv[0] to the Python interpreter. REQUIRED */
-    Py_SetProgramName(program);
-
-    /* Initialize the Python Interpreter. REQUIRED */
-    Py_Initialize();
-
-    PyImport_ImportModule("drafterpy");
-
-    PyMem_RawFree(program);
-    return 0;
 }

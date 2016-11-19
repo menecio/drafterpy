@@ -1,2 +1,2 @@
-# drafterpy
+# DrafterPy
 Python bindings for Drafter.

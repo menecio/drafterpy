@@ -4,9 +4,30 @@ Python bindings for the [Drafter](https://github.com/apiaryio/drafter) library. 
 
 API Blueprint is Web API documentation language. You can find API Blueprint documentation on the [API Blueprint site](http://apiblueprint.org).
 
+Example
+-------
 
-### Contribute
-Fork & Pull Request.
+Simple api-blueprint to json parsing:
+
+.. code:: python
+
+        from drafterpy.blueprint import Blueprint
+
+        content = "# My API\n" \
+                  "## GET /message\n" \
+                  "+ Response 200 (text/plain)\n" \
+                  "\n" \
+                  "        Hello World!\n"
+
+        bp = Blueprint(content)
+        bp.parse()
+
+
+Contribution
+------------
+
+Any contributions and advices are welcome. Please report any issues at
+the `GitHub page`_.
 
 ## License
 MIT License. See the [LICENSE](https://github.com/menecio/drafterpy/blob/master/LICENSE) file.

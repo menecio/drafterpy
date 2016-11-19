@@ -35,11 +35,11 @@ if sys.platform == 'darwin':
 
 sources = [os.path.join('src', s) for s in sources]
 depends = [os.path.join('src', d) for d in depends]
-libs = ['drafter', ]
+libs = ['drafter']
 
 
 extension = Extension(
-    'drafterpy._drafter', 
+    'drafterpy._drafter',
     libraries=libs,
     sources=sources,
     depends=depends,

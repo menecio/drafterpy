@@ -15,7 +15,7 @@ with open('./lib/__init__.py') as src:
            if line.startswith('__version__')][0]
 
 
-with open('README.md') as file:
+with open('README.rst') as file:
     long_descr = file.read()
 
 sources = ['drafterpy.c', ]
